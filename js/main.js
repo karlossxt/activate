@@ -87,30 +87,179 @@
     restart();
   }
 
-  /* ---------- Reproductor de radio (UI) ---------- */
+  /* ---------- Slider de imágenes "Acércate" ---------- */
+  var acercateSlider = document.getElementById("acercate-slider");
+  if (acercateSlider) {
+    var acercateSlides = acercateSlider.querySelectorAll(".acercate-slide");
+    var acercateIndex = 0;
+
+    setInterval(function () {
+      acercateSlides[acercateIndex].classList.remove("opacity-100");
+      acercateSlides[acercateIndex].classList.add("opacity-0");
+      acercateIndex = (acercateIndex + 1) % acercateSlides.length;
+      acercateSlides[acercateIndex].classList.remove("opacity-0");
+      acercateSlides[acercateIndex].classList.add("opacity-100");
+    }, 5000);
+  }
+
+  /* ---------- Reproductor de radio (stream Zeno.FM) ---------- */
   var playBtn = document.getElementById("radio-play-btn");
   var statusEl = document.getElementById("radio-status");
   var closeBtn = document.getElementById("radio-close");
   var player = document.getElementById("radio-player");
-  var playing = false;
+  var volumeEl = player ? player.querySelector('input[type="range"]') : null;
+  var livePlay = document.getElementById("live-play");
+  var livePlayIcon = document.getElementById("live-play-icon");
+  var liveVolume = document.getElementById("live-volume");
+  var liveLabel = document.getElementById("live-label");
+  var livePlayer = document.getElementById("live-player");
+  var audio = new Audio("https://stream.zeno.fm/3cy8fq93hc9uv");
+  audio.preload = "none";
+
+  function setBottomUI(on) {
+    if (!playBtn) return;
+    playBtn.innerHTML = on
+      ? '<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>'
+      : '<svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
+    if (statusEl) statusEl.textContent = on
+      ? "EN VIVO — RADIO ACTIVATE EN VIVO"
+      : "RADIO ACTIVATE — PAUSADA";
+    playBtn.setAttribute("title", on ? "Pausar" : "Reproducir");
+  }
+
+  function setLiveUI(on) {
+    if (!livePlayIcon) return;
+    livePlayIcon.innerHTML = on
+      ? '<path d="M6 4h4v16H6zM14 4h4v16h-4z"/>'
+      : '<path d="M8 5v14l11-7z"/>';
+    if (liveLabel) liveLabel.textContent = on ? "En vivo" : "En pausa";
+    if (livePlayer) livePlayer.classList.toggle("is-paused", !on);
+  }
+
+  function setPlayingUI(on) {
+    setBottomUI(on);
+    setLiveUI(on);
+  }
+
+  function radioPlay() {
+    audio.play().catch(function () {
+      setPlayingUI(false);
+      if (statusEl) statusEl.textContent = "NO DISPONIBLE — REINTENTA MÁS TARDE";
+      if (liveLabel) liveLabel.textContent = "No disponible";
+    });
+  }
 
   if (playBtn) {
     playBtn.addEventListener("click", function () {
-      playing = !playing;
-      playBtn.innerHTML = playing
-        ? '<svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>'
-        : '<svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
-      if (statusEl) statusEl.textContent = playing
-        ? "EN VIVO — RADIO ACTIVATE EN VIVO"
-        : "RADIO ACTIVATE — PAUSADA";
-      playBtn.setAttribute("title", playing ? "Pausar" : "Reproducir");
+      if (audio.paused) radioPlay(); else audio.pause();
+    });
+  }
+
+  if (livePlay) {
+    livePlay.addEventListener("click", function () {
+      if (audio.paused) radioPlay(); else audio.pause();
+    });
+  }
+
+  audio.addEventListener("play", function () { setPlayingUI(true); });
+  audio.addEventListener("pause", function () { setPlayingUI(false); });
+  audio.addEventListener("error", function () {
+    setPlayingUI(false);
+    if (statusEl) statusEl.textContent = "ERROR DE STREAM — REINTENTA";
+    if (liveLabel) liveLabel.textContent = "Error de transmisión";
+  });
+
+  if (volumeEl) {
+    volumeEl.addEventListener("input", function () {
+      audio.volume = volumeEl.value / 100;
+      if (liveVolume) liveVolume.value = volumeEl.value;
+    });
+  }
+
+  if (liveVolume) {
+    liveVolume.addEventListener("input", function () {
+      audio.volume = liveVolume.value / 100;
+      if (volumeEl) volumeEl.value = liveVolume.value;
     });
   }
 
   if (closeBtn && player) {
     closeBtn.addEventListener("click", function () {
+      audio.pause();
       player.classList.add("hidden");
     });
+  }
+
+  /* ---------- Título de la canción en vivo (metadatos Zeno.FM) ---------- */
+  var liveTrack = document.getElementById("live-track");
+  if (liveTrack && window.fetch && window.ReadableStream) {
+    var trackReader = null;
+    var trackBuffer = "";
+    var trackDecoder = new TextDecoder();
+    var gotTitle = false;
+    var pendingFallback = setTimeout(function () {
+      if (!gotTitle) liveTrack.textContent = "—";
+    }, 12000);
+
+    function showTrackTitle() {
+      if (!gotTitle) {
+        gotTitle = true;
+        clearTimeout(pendingFallback);
+      }
+    }
+
+    function connectTrack() {
+      if (trackReader) {
+        trackReader.cancel().catch(function () {});
+        trackReader = null;
+      }
+      if (!gotTitle) liveTrack.textContent = "Conectando...";
+
+      fetch("https://api.zeno.fm/mounts/metadata/subscribe/3cy8fq93hc9uv", { cache: "no-store" })
+        .then(function (res) {
+          if (!res.ok || !res.body) throw new Error("bad status");
+          trackReader = res.body.getReader();
+          readTrack();
+        })
+        .catch(function () {
+          trackReader = null;
+          if (!gotTitle) liveTrack.textContent = "Título no disponible";
+          setTimeout(connectTrack, 15000);
+        });
+    }
+
+    function readTrack() {
+      trackReader.read().then(function (result) {
+        if (result.done) {
+          trackReader = null;
+          setTimeout(connectTrack, 10000);
+          return;
+        }
+        trackBuffer += trackDecoder.decode(result.value, { stream: true });
+        var lines = trackBuffer.split("\n");
+        trackBuffer = lines.pop();
+        lines.forEach(function (line) {
+          if (line.indexOf("data:") === 0) {
+            var payload = line.slice(5).trim();
+            if (!payload) return;
+            try {
+              var meta = JSON.parse(payload);
+              if (meta && meta.streamTitle) {
+                liveTrack.textContent = meta.streamTitle;
+                showTrackTitle();
+              }
+            } catch (e) { /* payload no JSON, ignorar */ }
+          }
+        });
+        readTrack();
+      }).catch(function () {
+        trackReader = null;
+        if (!gotTitle) liveTrack.textContent = "Título no disponible";
+        setTimeout(connectTrack, 15000);
+      });
+    }
+
+    connectTrack();
   }
 
   /* ---------- Animación de aparición ---------- */

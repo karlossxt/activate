@@ -89,7 +89,7 @@
         <li class="nav-group">
           <a href="salud.html" class="nav-link">Salud</a>
           <ul class="nav-sub">
-            <li><a href="#" class="nav-disabled" aria-disabled="true">Aceites Esenciales<span class="prox">Próximamente</span></a></li>
+            <li><a href="aceites-esenciales.html">Aceites Esenciales</a></li>
           </ul>
         </li>
         <li class="nav-group">
@@ -252,27 +252,27 @@
   </footer>
 
   <!-- ============================== REPRODUCTOR DE RADIO ============================== -->
-  <div id="radio-player" class="fixed bottom-0 left-0 right-0 bg-black border-t-2 border-red-600 py-3 px-6 flex flex-wrap justify-between items-center z-[200] shadow-2xl text-white">
+  <div id="radio-player" class="fixed bottom-0 left-0 right-0 bg-stone-950/90 backdrop-blur-lg border-t-2 border-amber-500 py-3 px-6 flex flex-wrap justify-between items-center z-[200] shadow-2xl text-white">
     <div class="flex items-center gap-3">
       <span class="relative flex h-3.5 w-3.5" aria-hidden="true">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-red-600"></span>
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-amber-500"></span>
       </span>
       <span id="radio-status" class="text-xs md:text-sm font-semibold tracking-wider">EN VIVO — RADIO ACTIVATE EN VIVO</span>
     </div>
     <div class="flex items-center gap-4">
-      <button type="button" id="radio-play-btn" class="w-8 h-8 rounded-full bg-red-600 hover:bg-red-700 flex items-center justify-center text-white transition hover:scale-105 active:scale-95 focus:outline-none" title="Reproducir" aria-label="Reproducir o pausar radio">
+      <button type="button" id="radio-play-btn" class="w-8 h-8 rounded-full bg-amber-500 hover:bg-amber-600 flex items-center justify-center text-stone-950 transition hover:scale-105 active:scale-95 focus:outline-none" title="Reproducir" aria-label="Reproducir o pausar radio">
         <svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M8 5v14l11-7z"/>
         </svg>
       </button>
       <div class="hidden sm:flex items-center gap-2">
-        <svg class="w-4 h-4 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
         </svg>
-        <input type="range" class="w-20 h-1 bg-stone-700 rounded-lg appearance-none cursor-pointer accent-red-600" min="0" max="100" value="80" aria-label="Volumen">
+        <input type="range" class="w-20 h-1 bg-stone-700 rounded-lg appearance-none cursor-pointer accent-amber-500" min="0" max="100" value="80" aria-label="Volumen">
       </div>
-      <button type="button" id="radio-close" class="text-stone-400 hover:text-white transition ml-2 text-xs font-bold" title="Cerrar reproductor" aria-label="Cerrar reproductor">✕</button>
+      <button type="button" id="radio-close" class="text-stone-400 hover:text-amber-300 transition ml-2 text-xs font-bold" title="Cerrar reproductor" aria-label="Cerrar reproductor">✕</button>
     </div>
   </div>
 
