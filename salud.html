@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salud Alternativa — Actívate</title>
+  <meta name="description" content="Salud Alternativa: medicina complementaria, musicoterapia y herbolaria para el equilibrio del cuerpo y la mente. Actívate.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="img/act.png" type="image/png">
+</head>
+<body class="text-stone-900 flex flex-col min-h-screen">
+
+  <a class="skip-link" href="#contenido">Ir al contenido</a>
+
+  <!-- ============================== ENCABEZADO ============================== -->
+  <header class="site-header">
+    <div class="logo-wrap">
+      <a href="index.html" class="flex-1" aria-label="Actívate — inicio">
+        <img src="img/act.png" alt="Logotipo Actívate" class="logo-img">
+      </a>
+      <button type="button" id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="nav-list" aria-label="Abrir menú">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <nav class="nav-pill glass-card px-4 py-3 md:px-6" aria-label="Navegación principal">
+      <ul id="nav-list" class="nav-list">
+        <li class="nav-group">
+          <a href="index.html" class="nav-link">Inicio</a>
+          <ul class="nav-sub">
+            <li><a href="index.html#bienvenidos">Quiénes Somos</a></li>
+            <li><a href="index.html#filosofia">Nuestra Filosofía</a></li>
+            <li><a href="index.html#servicios">Servicios</a></li>
+            <li><a href="index.html#testimonios">Testimonios</a></li>
+          </ul>
+        </li>
+        <li class="nav-group">
+          <a href="#" class="nav-link">Consultoría</a>
+          <ul class="nav-sub">
+            <li><a href="#" class="nav-disabled" aria-disabled="true">Asesoría a empresas<span class="prox">Próximamente</span></a></li>
+          </ul>
+        </li>
+        <li class="nav-group">
+          <a href="educacion.html" class="nav-link">Educación</a>
+          <ul class="nav-sub">
+            <li><a href="#" class="nav-disabled" aria-disabled="true">Certificaciones<span class="prox">Próximamente</span></a></li>
+          </ul>
+        </li>
+        <li class="nav-group">
+          <a href="#" class="nav-link">Agroecología</a>
+          <ul class="nav-sub">
+            <li><a href="cursos-agroecologicos.html">Cursos Agroecológicos</a></li>
+            <li><a href="fertilizantes.html">Fertilizantes</a></li>
+            <li><a href="#" class="nav-disabled" aria-disabled="true">Ecoaldeas<span class="prox">Próximamente</span></a></li>
+            <li><a href="#" class="nav-disabled" aria-disabled="true">Sistemas Integrales<span class="prox">Próximamente</span></a></li>
+            <li><a href="permacultura.html">Permacultura</a></li>
+            <li><a href="#" class="nav-disabled" aria-disabled="true">Agricultura Familiar<span class="prox">Próximamente</span></a></li>
+            <li><a href="rescate-abejas.html">Rescate de Abejas</a></li>
+          </ul>
+        </li>
+        <li class="nav-group">
+          <a href="cooperativismo.html" class="nav-link">Cooperativismo</a>
+          <ul class="nav-sub">
+            <li><a href="#" class="nav-disabled" aria-disabled="true">Cursos de Cooperativas<span class="prox">Próximamente</span></a></li>
+            <li><a href="#" class="nav-disabled" aria-disabled="true">Constitución de Cooperativas<span class="prox">Próximamente</span></a></li>
+          </ul>
+        </li>
+        <li class="nav-group">
+          <a href="audio-visual.html" class="nav-link">Audio Visual</a>
+          <ul class="nav-sub">
+            <li><a href="#" class="nav-disabled" aria-disabled="true">Fotografía de Producto<span class="prox">Próximamente</span></a></li>
+            <li><a href="#" class="nav-disabled" aria-disabled="true">Materiales Didácticos<span class="prox">Próximamente</span></a></li>
+            <li><a href="#" class="nav-disabled" aria-disabled="true">Fotogrametría con Dron<span class="prox">Próximamente</span></a></li>
+            <li><a href="#" class="nav-disabled" aria-disabled="true">Grabación de Podcast<span class="prox">Próximamente</span></a></li>
+          </ul>
+        </li>
+        <li class="nav-group">
+          <a href="conciencia.html" class="nav-link">Conciencia</a>
+          <ul class="nav-sub">
+            <li><a href="#" class="nav-disabled" aria-disabled="true">Diplomado de Desarrollo Humano<span class="prox">Próximamente</span></a></li>
+          </ul>
+        </li>
+        <li class="nav-group">
+          <a href="salud.html" class="nav-link" aria-current="page">Salud</a>
+          <ul class="nav-sub">
+            <li><a href="#" class="nav-disabled" aria-disabled="true">Aceites Esenciales<span class="prox">Próximamente</span></a></li>
+          </ul>
+        </li>
+        <li class="nav-group">
+          <a href="#" class="nav-link">Radio</a>
+          <ul class="nav-sub">
+            <li><a href="#" class="nav-disabled" aria-disabled="true">Musicoterapia<span class="prox">Próximamente</span></a></li>
+          </ul>
+        </li>
+        <li class="nav-group">
+          <a href="tienda.html" class="btn-tienda">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+            Tienda
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ============================== CONTENIDO ============================== -->
+  <main id="contenido" class="flex-1 w-full max-w-6xl mx-auto px-4 py-10 space-y-24">
+
+    <!-- HERO -->
+    <section class="text-center space-y-6 max-w-4xl mx-auto">
+      <span class="inline-block glass-card text-amber-200 text-[0.7rem] md:text-xs font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full">
+        Salud
+      </span>
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg leading-tight">
+        Salud <span class="text-amber-400">Alternativa</span>
+      </h1>
+      <p class="text-white/85 text-lg md:text-xl font-light max-w-3xl mx-auto">
+        El médico sabio prevé la enfermedad futura
+      </p>
+    </section>
+
+    <!-- CONTENIDO -->
+    <section class="reveal max-w-4xl mx-auto">
+      <div class="glass-card rounded-2xl p-8 md:p-12 text-white leading-relaxed text-lg space-y-6">
+        <p>
+          La medicina tiene múltiples disciplinas y formas. A lo largo de la historia de la humanidad, en donde hay
+          humanos hay formas de recuperar la salud, en los sentidos que la misma humanidad ha desarrollado desde lo
+          primitivo hasta complejos equipos médicos y una creciente especialización para curar todo tipo de enfermedad.
+        </p>
+
+        <p>
+          Para Actívate es indispensable prevenir y solucionar en base de un diagnóstico, equilibrando el tipo de
+          medicina o terapia para el paciente, buscando lo mejor de los recursos que se tengan a la mano en
+          medicamentos, accesorios, conocimientos y práctica, y determinar la necesidad de un tratamiento o
+          recomendación acorde al estado del paciente.
+        </p>
+
+        <p>
+          Las formas alternas de sanación como la musicoterapia y la herbolaria, entre otras, hacen justo un equilibrio
+          perfecto si se aplican en base al cambio en la frecuencia de las moléculas del cuerpo y de las conexiones
+          cerebrales que transforman el futuro controlando las emociones y dominando nuestras propias creencias,
+          modificando la apertura de comunicación con uno mismo.
+        </p>
+
+        <p>
+          El auto empoderamiento a través de la sabiduría del pensamiento y el control de las emociones y los recuerdos,
+          dejando la renovación del yo constante buscando la libertad y la creatividad de lo que eres, apoyado con
+          frecuencias, con las plantas y los sonidos, estimulando la propia alegría del cuerpo y despertando la
+          sabiduría interna con mensajes y reflexiones.
+        </p>
+
+        <p>
+          Buscar patrones inconscientes y el propio autoengaño de lo que hemos sido nutridos desde lo familiar, lo
+          social, del medio ambiente y de la frecuencia vibratoria de la energía de la mente y del cuerpo, y su
+          conexión con las emociones, pensamientos y sensaciones desde lo negativo o desde lo positivo; estados de
+          gratitud y de conexión con la naturaleza combinan nuevos patrones que permiten procesos de cambio en tiempos
+          determinados.
+        </p>
+
+        <p>
+          La combinación de las elecciones de plantas y música para ciertos padecimientos de los sistemas del cuerpo en
+          el estado del ser en el aquí y el ahora, en combinación entre mente y cuerpo con emociones elevadas del
+          entorno interno, creando los propios medicamentos elaborados por el propio cuerpo si la idea da nuevas
+          conexiones que las plantas y la música fomenten frecuencias de raíz molecular; pensamientos pasados
+          generadores de estrés y enfermedad.
+        </p>
+
+        <p>
+          Ayudarse a tener pensamientos de sabiduría interna sanando desde la reinvención de la memoria y los
+          sentimientos, buscando el valor personal de forma interna, experimentando gratitud y felicidad con ciertas
+          frecuencias que estimulan la raíz de algún padecimiento; mensajes de salud, frecuencia de tonos acorde al
+          tono de la enfermedad y su transformación, más las propiedades de las plantas en sus diversas formas y
+          procesos de sanación y creación de frecuencias mentales.
+        </p>
+
+        <p>
+          Disfrutar de una buena infusión con una buena música, o una terapia con frecuencias y rezos con tambor, son
+          excelentes para cambiar el estado de ánimo de las personas y la creación de su realidad, siendo la música
+          clásica un referente de frecuencias curativas ampliamente reconocidas y que por su efectividad han curado a
+          miles de personas a lo largo de la historia; es por ello una de nuestras bases principales de promoción de la
+          salud física y mental.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="reveal max-w-4xl mx-auto text-center">
+      <div class="glass-card rounded-2xl p-8 md:p-12 text-white space-y-6">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-wide text-amber-200">El equilibrio es la clave</h2>
+        <p class="leading-relaxed text-lg text-stone-100 max-w-3xl mx-auto">
+          Conoce nuestras terapias complementarias, la musicoterapia y los productos naturales para tu bienestar.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 pt-2">
+          <a href="mailto:contacto@activate.mx" class="inline-block bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold px-8 py-3 rounded-full shadow-lg transition hover:-translate-y-0.5">
+            Contactar Cooperativa
+          </a>
+          <a href="tienda.html" class="inline-block glass-card text-white font-semibold px-8 py-3 rounded-full shadow-lg transition hover:bg-white/20">
+            Ver Tienda
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================== PIE DE PÁGINA ============================== -->
+  <footer class="w-full bg-black/45 backdrop-blur-lg border-t border-white/15">
+    <div class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+
+      <div class="flex justify-center md:justify-start">
+        <img src="img/act.png" alt="Logotipo Actívate" class="max-h-20 w-auto object-contain filter drop-shadow">
+      </div>
+
+      <div class="text-white text-xs md:text-sm space-y-4 flex flex-col items-center">
+        <div class="glass-card py-4 px-6 rounded-2xl w-full max-w-md space-y-3">
+          <div class="flex items-center gap-3">
+            <svg class="w-5 h-5 text-sky-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+            </svg>
+            <a href="tel:+525526333097" class="hover:text-amber-200 transition">5526 3330 97</a>
+          </div>
+          <div class="flex items-start gap-3 border-t border-white/10 pt-2">
+            <svg class="w-5 h-5 text-sky-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            <span class="leading-tight">Eje 5 Sur 850, Iztapalapa, Ciudad de México, 09208</span>
+          </div>
+          <div class="flex items-center gap-3 border-t border-white/10 pt-2">
+            <svg class="w-5 h-5 text-sky-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            <span>Lunes a Viernes, 10:00 AM a 6:00 PM</span>
+          </div>
+          <div class="flex items-center gap-3 border-t border-white/10 pt-2">
+            <svg class="w-5 h-5 text-sky-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            </svg>
+            <a href="mailto:contacto@activate.mx" class="hover:text-amber-200 transition">contacto@activate.mx</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex justify-center md:justify-end gap-4">
+        <a href="https://www.facebook.com/activate2222" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-blue-600 hover:bg-blue-700 flex items-center justify-center text-white transition hover:scale-110 shadow" title="Facebook">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/+525521120335" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-green-500 hover:bg-green-600 flex items-center justify-center text-white transition hover:scale-110 shadow" title="WhatsApp">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.717-1.45L0 24zm6.59-4.846c1.6.95 3.167 1.455 4.761 1.456 5.487 0 9.954-4.41 9.958-9.83.002-2.624-1.012-5.091-2.861-6.945-1.85-1.855-4.31-2.876-6.943-2.877-5.49 0-9.96 4.415-9.964 9.83-.001 1.954.512 3.86 1.488 5.56l-.996 3.637 3.737-.968zm11.303-7.502c-.314-.155-1.849-.897-2.134-.997-.285-.102-.493-.153-.7.154-.207.307-.803.998-.984 1.199-.18.201-.362.226-.676.071-.314-.155-1.327-.482-2.528-1.538-.934-.821-1.564-1.837-1.748-2.143-.183-.307-.02-.472.136-.624.14-.137.314-.362.47-.543.156-.18.208-.307.312-.511.104-.205.052-.384-.026-.54-.078-.154-.7-1.657-.96-2.27-.253-.598-.51-.516-.7-.525-.195-.009-.418-.01-.641-.01-.222 0-.585.083-.89.417-.307.33-.1.173-1.07 1.343-.96 1.17-2.224 2.302-2.22 4.19.004 1.889 1.403 3.714 1.597 3.972.196.258 2.762 4.16 6.69 5.824 1.25.53 2.158.823 2.896 1.054 1.24.39 2.368.318 3.258.188.99-.145 1.85-.75 2.11-1.442.26-.693.26-1.288.182-1.413-.078-.125-.285-.201-.6-.356z"/>
+          </svg>
+        </a>
+        <a href="https://twitter.com/mundoactivate" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-sky-500 hover:bg-sky-600 flex items-center justify-center text-white transition hover:scale-110 shadow" title="Twitter / X">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/channel/UCHGZv3ihN6e-603uV6fEiJQ" target="_blank" rel="noopener" class="w-10 h-10 rounded-full bg-red-600 hover:bg-red-700 flex items-center justify-center text-white transition hover:scale-110 shadow" title="YouTube">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M23.498 6.163a3.003 3.003 0 00-2.11-2.11C19.517 3.545 12 3.545 12 3.545s-7.517 0-9.388.508a3.003 3.003 0 00-2.11 2.11C0 8.033 0 12 0 12s0 3.967.502 5.837a3.003 3.003 0 002.11 2.11c1.871.508 9.388.508 9.388.508s7.517 0 9.388-.508a3.003 3.003 0 002.11-2.11C24 15.967 24 12 24 12s0-3.967-.502-5.837zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="w-full bg-[#3b82f6] text-center py-4 border-t border-white/10">
+      <a href="politica-de-privacidad.html" class="text-white text-sm font-semibold tracking-wider hover:underline uppercase">
+        Política de Privacidad
+      </a>
+      <p class="text-white/70 text-xs mt-1">© <span id="year">2026</span> Actívate · Asesoría y Capacitación Técnica Educativa S.C de R.L</p>
+    </div>
+  </footer>
+
+  <!-- ============================== REPRODUCTOR DE RADIO ============================== -->
+  <div id="radio-player" class="fixed bottom-0 left-0 right-0 bg-black border-t-2 border-red-600 py-3 px-6 flex flex-wrap justify-between items-center z-[200] shadow-2xl text-white">
+    <div class="flex items-center gap-3">
+      <span class="relative flex h-3.5 w-3.5" aria-hidden="true">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-red-600"></span>
+      </span>
+      <span id="radio-status" class="text-xs md:text-sm font-semibold tracking-wider">EN VIVO — RADIO ACTIVATE EN VIVO</span>
+    </div>
+    <div class="flex items-center gap-4">
+      <button type="button" id="radio-play-btn" class="w-8 h-8 rounded-full bg-red-600 hover:bg-red-700 flex items-center justify-center text-white transition hover:scale-105 active:scale-95 focus:outline-none" title="Reproducir" aria-label="Reproducir o pausar radio">
+        <svg class="w-4 h-4 fill-current ml-0.5" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </button>
+      <div class="hidden sm:flex items-center gap-2">
+        <svg class="w-4 h-4 text-stone-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
+        </svg>
+        <input type="range" class="w-20 h-1 bg-stone-700 rounded-lg appearance-none cursor-pointer accent-red-600" min="0" max="100" value="80" aria-label="Volumen">
+      </div>
+      <button type="button" id="radio-close" class="text-stone-400 hover:text-white transition ml-2 text-xs font-bold" title="Cerrar reproductor" aria-label="Cerrar reproductor">✕</button>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
